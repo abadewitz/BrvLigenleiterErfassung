@@ -26,11 +26,11 @@ Die Browser-Extension wirkt sich nur auf folgende URLs aus:
 
 **Vorher**:
 
-![vorher](\dokumentation\vorher.jpg)
+![vorher](dokumentation/vorher.jpg)
 
 **Nachher**:
 
-![nachher](\dokumentation\nachher.jpg)
+![nachher](dokumentation/nachher.jpg)
 
 
 
@@ -40,13 +40,13 @@ Die Browser-Extension wirkt sich nur auf folgende URLs aus:
 2. **Datei** an einem gewünschten Ort **entpacken** (z. B. unter `C:\Browser-Erweiterungen\BrvLigenleiterErfassungExtension`)
    <small>Hinweis: Die entpackten Dateien müssen am gewünschten Ort dauerhaft vorhanden sein</small>
 3. Im Browser Tab "**Erweiterungen**" öffnen
-   ![installation-erweiterungen](dokumentation\installation-erweiterungen.jpg)
+   ![installation-erweiterungen](dokumentation/installation-erweiterungen.jpg)
 4. **Entwicklermodus** in den Browser Erweiterungen **aktivieren** und **"Entpackte Erweiterung laden"** wählen
-   ![installation-entwicklermodus](\dokumentation\installation-entwicklermodus.jpg)
+   ![installation-entwicklermodus](dokumentation/installation-entwicklermodus.jpg)
 5. **Zu** "gewünschten **Ort**" aus Schritt 2 **navigieren** und Ordner auswählen
-   ![installation-ordner-auswählen](dokumentation\installation-ordner-auswählen.jpg)
+   ![installation-ordner-auswählen](dokumentation/installation-ordner-auswählen.jpg)
 6. **Fertig**
-   ![installation-fertig](dokumentation\installation-fertig.jpg)
+   ![installation-fertig](dokumentation/installation-fertig.jpg)
 
 
 
