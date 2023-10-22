@@ -1,10 +1,15 @@
 {
     "name": "BRV Ligenleiter Erfassung",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "manifest_version": 3,
     "description": "Chromium Extension für Layoutkorrekturen der Erfassungsmaske der BRV Ligenleiter Verwaltungsoberfläche (RDB)",
     "content_scripts": [{
-        "matches": ["https://brv-ringen.de/index.php?option=com_rdb*", "https://www.brv-ringen.de/index.php?option=com_rdb*"],
+        "matches": [
+			"https://brv-ringen.de/index.php?option=com_rdb*"
+			,"https://www.brv-ringen.de/index.php?option=com_rdb*"
+			,"https://brv-ringen.de/?option=com_rdb*"
+			,"https://www.brv-ringen.de/?option=com_rdb*"
+		],
         "js": ["content.min.js"],
         "css": ["rdb-korrektur.min.css"],
         "run_at": "document_end"
