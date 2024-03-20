@@ -5,6 +5,8 @@ function korrigiereLayout() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
+    markierePassNummerNamePasstNicht();
+
     const editParam = urlParams.get('xo');
     if (editParam != null && editParam == 'ec') {
         var infoMessage = document.createElement("p");
@@ -18,6 +20,17 @@ function korrigiereLayout() {
         document.getElementById('jm-content').style.marginLeft = '0%';
 
         ersetzeDurchTextarea("rdb_editorComment");
+    }
+}
+
+function markierePassNummerNamePasstNicht() {
+
+    var xpath = "//a[text()='Den Namen aus Pass übernehmen']";
+    var matchingElements = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+    for (let i = 0, length = matchingElements.snapshotLength; i < length; ++i) {
+        var elem = matchingElements.snapshotItem(i);
+        elem.setAttribute("style", "background-color: yellow;");
+        console.log(matchingElements.snapshotItem(i).textContent)
     }
 }
 

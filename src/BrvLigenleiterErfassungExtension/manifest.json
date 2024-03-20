@@ -10,8 +10,8 @@
 			,"https://brv-ringen.de/?option=com_rdb*"
 			,"https://www.brv-ringen.de/?option=com_rdb*"
 		],
-        "js": ["content.min.js"],
-        "css": ["rdb-korrektur.min.css"],
+        "js": ["content.js"],
+        "css": ["rdb-korrektur.css"],
         "run_at": "document_end"
     }],
     "icons": {
