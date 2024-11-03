@@ -23,9 +23,22 @@ function korrigiereLayout() {
     }
 }
 
+
+function markiereKeineLizenz() {
+
+    var xpath = "//a[contains(text(), 'hat keine Saison Lizenz.')]";
+    var matchingElements = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+    for (let i = 0, length = matchingElements.snapshotLength; i < length; ++i) {
+        var elem = matchingElements.snapshotItem(i);
+        elem.setAttribute("style", "background-color: yellow;");
+        console.log(matchingElements.snapshotItem(i).textContent)
+    }
+}
+
+
 function markierePassNummerNamePasstNicht() {
 
-    var xpath = "//a[text()='Den Namen aus Pass übernehmen']";
+    var xpath = "//a[contains(text(), 'Den Namen aus Pass übernehmen')]";
     var matchingElements = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
     for (let i = 0, length = matchingElements.snapshotLength; i < length; ++i) {
         var elem = matchingElements.snapshotItem(i);
