@@ -6,6 +6,7 @@ function korrigiereLayout() {
     const urlParams = new URLSearchParams(queryString);
 
     markierePassNummerNamePasstNicht();
+    markiereKeineLizenz();
 
     const editParam = urlParams.get('xo');
     if (editParam != null && editParam == 'ec') {
@@ -25,8 +26,7 @@ function korrigiereLayout() {
 
 
 function markiereKeineLizenz() {
-
-    var xpath = "//a[contains(text(), 'hat keine Saison Lizenz.')]";
+    var xpath = "//li[contains(text(), 'hat keine Saison Lizenz.')]";
     var matchingElements = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
     for (let i = 0, length = matchingElements.snapshotLength; i < length; ++i) {
         var elem = matchingElements.snapshotItem(i);
