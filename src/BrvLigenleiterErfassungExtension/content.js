@@ -7,7 +7,8 @@ function korrigiereLayout() {
 
     markierePassNummerNamePasstNicht();
     markiereKeineLizenz();
-
+    markiereLizenzNichtEingegeben();
+    
     const editParam = urlParams.get('xo');
     if (editParam != null && editParam == 'ec') {
         var infoMessage = document.createElement("p");
@@ -24,6 +25,15 @@ function korrigiereLayout() {
     }
 }
 
+function markiereLizenzNichtEingegeben() {
+    var xpath = "//li[contains(text(), 'Lizenz nicht eingegeben')]";
+    var matchingElements = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+    for (let i = 0, length = matchingElements.snapshotLength; i < length; ++i) {
+        var elem = matchingElements.snapshotItem(i);
+        elem.setAttribute("style", "background-color: yellow;");
+        console.log(matchingElements.snapshotItem(i).textContent)
+    }
+}
 
 function markiereKeineLizenz() {
     var xpath = "//li[contains(text(), 'hat keine Saison Lizenz.')]";
