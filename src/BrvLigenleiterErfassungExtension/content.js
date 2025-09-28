@@ -8,7 +8,8 @@ function korrigiereLayout() {
     markierePassNummerNamePasstNicht();
     markiereKeineLizenz();
     markiereLizenzNichtEingegeben();
-    
+    breitesKommentarfeld();
+
     const editParam = urlParams.get('xo');
     if (editParam != null && editParam == 'ec') {
         var infoMessage = document.createElement("p");
@@ -22,6 +23,13 @@ function korrigiereLayout() {
         document.getElementById('jm-content').style.marginLeft = '0%';
 
         ersetzeDurchTextarea("rdb_editorComment");
+    }
+}
+
+function breitesKommentarfeld() {
+    var input = document.getElementById("rdb_controllerComment");
+    if(input != null) {
+        input.setAttribute("style", "width: 100%;");
     }
 }
 
