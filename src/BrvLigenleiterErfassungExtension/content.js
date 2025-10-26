@@ -9,6 +9,7 @@ function korrigiereLayout() {
     markiereKeineLizenz();
     markiereLizenzNichtEingegeben();
     breitesKommentarfeld();
+    ligenMarkieren();
 
     const editParam = urlParams.get('xo');
     if (editParam != null && editParam == 'ec') {
@@ -24,6 +25,37 @@ function korrigiereLayout() {
 
         ersetzeDurchTextarea("rdb_editorComment");
     }
+}
+
+function ligenMarkieren() {
+    document.querySelectorAll("table.rdbSpacy tr").forEach(tr => {
+        const tds = tr.querySelectorAll("td");
+        if (tds.length === 0) 
+            return;
+
+        const liga = tds[3]?.textContent.trim();
+        const region = tds[4]?.textContent.trim();
+
+        console.log(tds[3]?.textContent.trim());
+        const zielLigen = [
+            "(S) Bezirksliga",
+            "Gruppenliga",
+            "Gruppenoberliga"
+        ];
+        const zielRegionen = [
+            "Oberfranken",
+            "Nord"
+        ];
+        
+        if (zielLigen.some(l => liga.includes(l)) && (zielRegionen.some(r => region.includes(r)))) {
+            tr.style.color = "red";
+
+            const lastCell = tds[tds.length - 1];
+            if (lastCell) 
+                lastCell.style.backgroundColor = "yellow";
+        }
+    });
+
 }
 
 function breitesKommentarfeld() {
